@@ -8,7 +8,6 @@ import { InvestmentService } from '../Services/investment.service';
 })
 export class UserInputComponent {
 
-  
   @Output() calculate = new EventEmitter<InvestmentInput>();
   enteredInitialInvestment ='0';
   enteredAnnualInvestment = '0';

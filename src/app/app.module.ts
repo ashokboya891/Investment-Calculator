@@ -4,23 +4,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { InvestmentResultComponent } from './investment-result/investment-result.component';
-import { UserInputComponent } from './user-input/user-input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { UserInputModule } from './user-input/user.Input.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     InvestmentResultComponent,
-    UserInputComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    CommonModule,
-    ReactiveFormsModule
+    UserInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
