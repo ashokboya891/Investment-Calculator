@@ -6,6 +6,14 @@ import { InvestmentInput } from '../Investment-Input.model';
 })
 export class InvestmentService {
   
+  // resultData?: {
+  //   year: number;
+  //   interest: number;
+  //   valueEndOfYear: number;
+  //   annualInvestment: number;
+  //   totalInterest: number;
+  //   totalAmountInvested: number;
+  // }[];
   resultData = signal<{
     year: number;
     interest: number;
@@ -38,5 +46,6 @@ export class InvestmentService {
     }
 
     this.resultData.set(annualData);
+    // this.resultData = annualData;
   }
 }

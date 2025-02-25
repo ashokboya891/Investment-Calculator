@@ -9,16 +9,25 @@ import { InvestmentService } from '../Services/investment.service';
 })
 export class InvestmentResultComponent {
   
-  @Input() results?: {
-    year: number;
-    interest: number;
-    valueEndOfYear: number;
-    annualInvestment: number;
-    totalInterest: number;
-    totalAmountInvested: number;
-  }[];
+  // @Input() results?: {
+  //   year: number;
+  //   interest: number;
+  //   valueEndOfYear: number;
+  //   annualInvestment: number;
+  //   totalInterest: number;
+  //   totalAmountInvested: number;
+  // }[];
+
+  private investmentService = inject(InvestmentService);
+
+  results = computed(() => this.investmentService.resultData() || []);
+  // get results() {
+  //   return this.investmentService.resultData;
+  // }
   
   trackByYear(index: number, result: any): number {
     return result.year;
   }
+
+
 }

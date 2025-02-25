@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let result of results; trackBy: trackByYear">
+      <tr *ngFor="let result of results(); trackBy: trackByYear">
         <td>{{ result.year }}</td>
         <td>{{ result.valueEndOfYear | currency }}</td>
         <td>{{ result.interest | currency }}</td>
