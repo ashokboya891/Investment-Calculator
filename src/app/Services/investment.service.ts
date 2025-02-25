@@ -1,15 +1,12 @@
-import { Component, OnInit, signal } from '@angular/core';
-import { InvestmentInput } from './Investment-Input.model';
+import { Injectable, signal } from '@angular/core';
+import { InvestmentInput } from '../Investment-Input.model';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class AppComponent{
-  title = 'Investment-Calculator';
-
-  resultsData=signal<{
+export class InvestmentService {
+  
+  resultData = signal<{
     year: number;
     interest: number;
     valueEndOfYear: number;
@@ -17,16 +14,8 @@ export class AppComponent{
     totalInterest: number;
     totalAmountInvested: number;
   }[] | undefined>(undefined);
-  // resultsData?: {
-  //   year: number;
-  //   interest: number;
-  //   valueEndOfYear: number;
-  //   annualInvestment: number;
-  //   totalInterest: number;
-  //   totalAmountInvested: number;
-  // }[];
- 
-  onCalculateInvestmentResults(data: InvestmentInput) {
+
+  calculateInvestmentResults(data: InvestmentInput) {
     const { initialInvestment, annualInvestment, expectedReturn, duration } =
       data;
     const annualData = [];
@@ -47,8 +36,7 @@ export class AppComponent{
         totalAmountInvested: initialInvestment + annualInvestment * year,
       });
     }
-    this.resultsData.set(annualData);  
-    console.log(annualData);
-  }
 
+    this.resultData.set(annualData);
+  }
 }

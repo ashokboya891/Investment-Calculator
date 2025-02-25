@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output ,signal} from '@angular/core';
 import { InvestmentInput } from "src/app/Investment-Input.model";
+import { InvestmentService } from '../Services/investment.service';
 @Component({
   selector: 'app-user-input',
   templateUrl: './user-input.component.html',
@@ -24,12 +25,4 @@ export class UserInputComponent {
     this.enteredExpectedReturn = '5';
     this.enteredDuration = '10';
   }
-  // reset()
-  // {
-  //   this.enteredInitialInvestment = '0';
-  //   this.enteredAnnualInvestment = '0';
-  //   this.enteredExpectedReturn = '5';
-  //   this.enteredDuration = '10';
-    
-  // }
 }
