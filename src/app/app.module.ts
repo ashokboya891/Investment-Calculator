@@ -7,12 +7,16 @@ import { InvestmentResultComponent } from './investment-result/investment-result
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UserInputModule } from './user-input/user.Input.module';
+import { FirstComponent } from './Testing/first/first.component';
+import { SecondComponent } from './Testing/second/second.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     InvestmentResultComponent,
+    FirstComponent,
+    SecondComponent
   ],
   imports: [
     BrowserModule,
