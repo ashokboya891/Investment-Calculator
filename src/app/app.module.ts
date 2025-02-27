@@ -21,7 +21,9 @@ import { SecondComponent } from './Testing/second/second.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserInputModule
+    UserInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

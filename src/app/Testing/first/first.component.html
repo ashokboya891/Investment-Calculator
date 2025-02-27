@@ -1,3 +1,37 @@
-<p>first works!</p>
+<!-- <p>first works!</p>
 
-<button (click)="sendData()" style="background-color: white;">click here..!</button>
+<button (click)="sendData()" style="background-color: white;">click here..!</button> -->
+
+
+<div class="container">
+    <h2>Reactive Form Example</h2>
+    
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <label for="name">Name:</label>
+      <input id="name" type="text" formControlName="name" />
+      
+      <label for="email">Email:</label>
+      <input id="email" type="email" formControlName="email" />
+      
+      <button type="submit">Submit</button>
+    </form>
+  
+    <h3>Live Preview:</h3>
+    <p><strong>Name:</strong> {{ userForm.get('name')?.value }}</p>
+    <p><strong>Email:</strong> {{ userForm.get('email')?.value }}</p>
+  </div>
+  
+
+
+<h3>_____________________</h3>
+
+<form (ngSubmit)="onSubmit1()">
+    <label for="name">Name:</label>
+    <input id="name" type="text" [(ngModel)]="user.name" name="name" required />
+    <
+    <label for="email">Email:</label>
+    <input id="email" type="email" [(ngModel)]="user.email" name="email" required />
+  
+    <button type="submit">Submit</button>
+  </form>
+  
